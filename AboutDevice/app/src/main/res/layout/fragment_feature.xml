@@ -1,0 +1,40 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="symphony.munir.com.aboutdevice.activity.FeatureFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/reltop">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include android:id="@+id/processor"
+                layout="@layout/processor"/>
+            <include android:id="@+id/camera"
+                layout="@layout/camera"/>
+            <include android:id="@+id/display"
+                layout="@layout/display"/>
+            <include android:id="@+id/os"
+                layout="@layout/os"/>
+            <include android:id="@+id/network"
+                layout="@layout/network"/>
+            <include android:id="@+id/storage"
+                layout="@layout/storage"/>
+            <include android:id="@+id/battery"
+                layout="@layout/battery"/>
+            <include android:id="@+id/sim"
+                layout="@layout/sim"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height = "wrap_content"
+    android:background="?android:attr/selectableItemBackground"
+    android:clipToPadding="false"
+    android:elevation="8dp">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/id_ccicon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:contentDescription="icon"
+        android:src="@drawable/cc"
+        android:layout_marginLeft="-6dp"
+        android:scaleType="fitCenter"
+        android:elevation="10dp"
+
+        />
+
+    <TextView
+        android:id="@+id/id_ccDistrict"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/id_ccicon"
+        android:layout_alignParentRight="true"
+        android:layout_alignWithParentIfMissing="true"
+        android:textSize="26sp"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:text="Barishal"/>
+
+    <TextView
+        android:id="@+id/id_ccAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/id_ccDistrict"
+        android:layout_toRightOf="@id/id_ccicon"
+        android:layout_alignParentRight="true"
+        android:textSize="12sp"
+
+        android:text="Barishal dfsdf fsdkfdkf ldkfs;kdf "
+        android:maxLines="3"
+        />
+</RelativeLayout>

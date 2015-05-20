@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="horizontal">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="170dp"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_marginTop="4dp"
+        >
+       <LinearLayout
+           android:layout_width="0dp"
+           android:layout_height="match_parent"
+           android:layout_weight="3"
+           android:orientation="horizontal"
+           android:id="@+id/featureblock">
+
+           <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+               xmlns:card_view="http://schemas.android.com/apk/res-auto"
+               android:layout_width="0dp"
+               android:layout_height="180dp"
+               android:layout_weight="1"
+               android:minHeight="100dp"
+               android:focusable="true"
+               card_view:cardUseCompatPadding="true"
+               card_view:cardBackgroundColor="#FFFFFF"
+               android:background="?android:attr/selectableItemBackground"
+               android:clickable="true"
+               card_view:cardElevation="8dp"
+               >
+
+               <!-- android:layout_margin="1dp" -->
+
+               <RelativeLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content"
+
+                   >
+
+                   <ImageView
+                       android:id="@+id/featureimage"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:scaleType="centerCrop"
+                       android:layout_centerInParent="true"
+                       android:src="@drawable/feature"
+
+                       />
+                   <RelativeLayout
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:layout_marginLeft="70dp"
+                       android:background="#ffffff"
+                       android:alpha=".6">
+                       <TextView
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:textSize="19sp"
+                           android:text="Features"
+                           android:id="@+id/featuretext"
+                           android:layout_marginLeft="1dp"
+                           android:textColor="#000003"/>
+                       <View
+                           android:layout_width="match_parent"
+                           android:layout_height="2dp"
+                           android:background="@color/colorViewLine"
+                           android:layout_margin="1dp"
+                           android:id="@+id/featurelineview"
+                           android:layout_below="@+id/featuretext"
+
+                           />
+                       <RelativeLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="wrap_content"
+                           android:layout_below="@+id/featurelineview"
+
+                           >
+                           <TextView
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:textSize="15sp"
+                               android:text="See the exciting features of Helio S1"
+                               android:id="@+id/feturetexts"
+                               android:layout_marginLeft="5dp"
+                               android:layout_marginTop="3dp"
+                               android:textColor="@color/colorHomeCardText"
+                               android:onClick="showFeatures"
+                               android:clickable="true"
+                               />
+
+
+                       </RelativeLayout>
+
+                   </RelativeLayout>
+
+               </RelativeLayout>
+
+           </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="3"
+            android:orientation="horizontal"
+            android:id="@+id/contactblock">
+
+            <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_weight="1"
+                android:minHeight="100dp"
+                android:focusable="true"
+                card_view:cardUseCompatPadding="true"
+                card_view:cardBackgroundColor="#FFFFFF"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                card_view:cardElevation="8dp">
+
+                <!-- android:layout_margin="1dp" -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <ImageView
+                        android:id="@+id/contactimage"
+                        android:layout_width="match_parent"
+                        android:layout_height="170dp"
+                        android:scaleType="centerCrop"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/bdmaps"
+                        />
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="45dp"
+                        android:background="#ffffff"
+                        android:alpha=".6">
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:textSize="19sp"
+                            android:text="Customer Care"
+                            android:id="@+id/contacttext"
+                            android:layout_marginLeft="1dp"
+                            android:textColor="#000003"/>
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/colorViewLine"
+                            android:layout_margin="1dp"
+                            android:id="@+id/contactlineview"
+                            android:layout_below="@+id/contacttext"
+
+                            />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/contactlineview"
+
+                            >
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="We have 60 customer care center all over the country"
+                                android:id="@+id/contcttexts"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="3dp"
+                                android:textColor="@color/colorHomeCardText"
+                                android:onClick="showCustomerCare"
+                                android:clickable="true"
+                                />
+
+                        </RelativeLayout>
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </android.support.v7.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

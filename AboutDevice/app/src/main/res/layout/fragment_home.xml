@@ -1,0 +1,30 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="symphony.munir.com.aboutdevice.activity.HomeFragment">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <include android:id="@+id/hotline"
+                layout="@layout/home_hotline"></include>
+            <include android:id="@+id/featurecontact"
+                layout="@layout/home_feature_contact"></include>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
+
+
