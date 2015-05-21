@@ -1,6 +1,7 @@
 package symphony.munir.com.aboutdevice.activity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -15,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
+
+import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
 import java.util.Locale;
 
@@ -123,7 +126,14 @@ public class ContactsFragment extends Fragment {
 
         recycleViewer.setItemAnimator(new DefaultItemAnimator());
         //  RecyclerView.ItemDecoration itemDecoration = new DividerItemDecoration(this,LinearLayoutManager.VERTICAL);
-        recycleViewer.addItemDecoration(new DividerItemDecoration(ResourcesCompat.getDrawable(getResources(), R.drawable.recycler_item_divider, null)));
+       // recycleViewer.addItemDecoration(new DividerItemDecoration(ResourcesCompat.getDrawable(getResources(), R.drawable.recycler_item_divider, null)));
+        recycleViewer.addItemDecoration(
+                new HorizontalDividerItemDecoration.Builder(getActivity())
+                        .color(Color.GRAY)
+                        .sizeResId(R.dimen.recycler_item_divider)
+                        .marginResId(R.dimen.recycler_divider_left_margin, R.dimen.recycler_divider_right_margin)
+                        .build());
+
 
         recycleViewer.addOnItemTouchListener(
                 new RecyclerItemClickListener(getActivity(),new RecyclerItemClickListener.OnItemClickListener(){
