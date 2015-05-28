@@ -18,5 +18,5 @@
 
     <string name="title_contacts">Contact</string>
     <string name="title_feature">Feature</string>
-    <string name="title_home">Home</string>
+    <string name="title_home"></string>
 </resources>

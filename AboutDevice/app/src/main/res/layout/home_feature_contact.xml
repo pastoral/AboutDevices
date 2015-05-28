@@ -50,7 +50,7 @@
                    <RelativeLayout
                        android:layout_width="match_parent"
                        android:layout_height="match_parent"
-                       android:layout_marginLeft="70dp"
+                       android:layout_marginLeft="50dp"
                        android:background="#ffffff"
                        android:alpha=".6">
                        <TextView
@@ -167,7 +167,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="15sp"
-                                android:text="We have 60 customer care center all over the country"
+                                android:text="We have 47 customer care center all over the country"
                                 android:id="@+id/contcttexts"
                                 android:layout_marginLeft="5dp"
                                 android:layout_marginTop="3dp"

@@ -1,9 +1,11 @@
 package symphony.munir.com.aboutdevice;
 
 
-import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -11,6 +13,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -32,6 +35,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
     TextView modelName;
     private Fragment uniFragment;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,20 +50,32 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
        // getSupportActionBar().setDisplayShowHomeEnabled(true);
        // displayShowHomeEnabled(true);
 
+
         drawerFragment = (FragmentDrawer)
-                getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
+        getSupportFragmentManager().findFragmentById(R.id.fragment_navigation_drawer);
         drawerFragment.setUp(R.id.fragment_navigation_drawer, (DrawerLayout) findViewById(R.id.drawer_layout), mToolbar);
         drawerFragment.setDrawerListener(this);
+       // displayView(0);
+        String brand = Build.BRAND;
+        //Toast.makeText(this,brand,Toast.LENGTH_SHORT).show();
 
-        // display the first navigation drawer view on app launch
-        displayView(0);
+        if(brand.contains("Symphony")||brand.contains("symphony") )
+        {
+            displayView(0);
+        }
+        else{
+            inCompatibilityDialog();
+        }
+
+
     }
 
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+       // getMenuInflater().inflate(R.menu.menu_main, menu);
+
         return true;
     }
 
@@ -78,7 +94,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
 
 
         return super.onOptionsItemSelected(item);
-    }
+    } */
 
     @Override
     public void onDrawerItemSelected(View view, int position) {
@@ -134,6 +150,7 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
     public void showCustomerCare(View v)
     {
 
+
         Fragment fragment = new ContactsFragment();
         String title = getString(R.string.app_name);
         title = getString(R.string.title_contacts);
@@ -183,5 +200,25 @@ public class MainActivity extends ActionBarActivity implements FragmentDrawer.Fr
         Intent intent2 = new Intent(Intent.ACTION_DIAL);
         intent2.setData(Uri.parse("tel:0966670066"));
         startActivity(intent2);
+    }
+
+    public void inCompatibilityDialog()
+    {
+        android.support.v7.app.AlertDialog.Builder builder = new android.support.v7.app.AlertDialog.Builder(this,R.style.AppCompatAlertDialogStyle);
+        builder.setTitle("Non brand device");
+        builder.setMessage("Please use a Symphony smart phone to run this application");
+        builder.setCancelable(false);
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                //dialogInterface.dismiss();
+
+                finish();
+
+            }
+        });
+        builder.show();
+
+
     }
 }

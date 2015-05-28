@@ -54,7 +54,18 @@ public class CCDataSet {
                 new CCData("Natore", " Natore"," Niloy (1st floor), 460 Fouzdaripara, Nicha Bazar, Natore 6400", true, R.drawable.cc,"en"," 24.413111" , " 88.983944 "),
                 new CCData("Netrokona", " Netrokona"," Niloy (1st floor), 460 Fouzdaripara, Nicha Bazar, Natore 6400", true, R.drawable.cc,"en"," 24.884948" , " 90.732951 "),
                 new CCData("Nilphamari", " Nilphamari"," Zila Parisad Super Market (Shop No-227 & 228), (1st floor), Chourongi Moor, Nilphamari", true, R.drawable.cc,"en"," 25.927979" , " 88.856049 "),
-                new CCData("Pabna", " Pabna"," Afaz Market' (1st Floor) Holding no.-1224, Panch Matha More, Ataikula Road, Dilalpur, Pabna", true, R.drawable.cc,"en"," 24.007113" , " 89.239255 ")
+                new CCData("Pabna", " Pabna"," Afaz Market' (1st Floor) Holding no.-1224, Panch Matha More, Ataikula Road, Dilalpur, Pabna", true, R.drawable.cc,"en"," 24.007113" , " 89.239255 "),
+                new CCData("Rajshahi", " Rajshahi"," Nur-A-Hayat Garden (2nd floor) 68, Kumarpara Moor, Borendro Collage Road, Ghoramara, Boalia, Rajshahi-6100", true, R.drawable.cc,"en"," 24.364900" , " 88.603254 "),
+                new CCData("Rangpur", " Rangpur"," Hatil Tower (1st Floor) Dhap, Jail Road (South side of Dhap Boro Masjid), Rangpur-5400", true, R.drawable.cc,"en"," 25.761077" , " 89.235719 "),
+                new CCData("Sirajgonj", " Sirajgonj"," Siddik Plaza (2nd Floor), 121 SS Road, Sirajgonj", true, R.drawable.cc,"en"," 24.457175" , " 89.705939 "),
+                new CCData("Sylhet ", " Sylhet "," R.N. Tower, (Ground Floor), Chowhatta Point, Sylhet ", true, R.drawable.cc,"en"," 24.898885 " , " 91.870886 "),
+                new CCData("Tangail", " Tangail"," Shila Complex (3rd floor), Victoria Road, Tangail ", true, R.drawable.cc,"en"," 24.250973 " , " 89.916559 "),
+                new CCData("Madaripur", " Madaripur"," A.M Tower (2nd Floor), Near Chourasta, Panichatro, Shariatpur Road, Madaripur-7900", true, R.drawable.cc,"en"," 23.168648" , " 90.215092"),
+                new CCData("Noahkali", " Noahkali"," Kiron Shopping Complex (2nd floor), Karimpur Road, Chowmohoni, Noahkali", true, R.drawable.cc,"en"," 22.945543" , " 91.118535"),
+                new CCData("Cox's Bazar", " Cox's Bazar"," Chowdhury Shopping Complex (1st Floor), Tekpara, Main Road, Barmiz Market, Cox's Bazar", true, R.drawable.cc,"en"," 21.442257" , " 91.982542"),
+                new CCData("Satkhira", " Satkhira"," Tufan Complex (2nd Floor), Abul Kasem Sarak, Satkhira", true, R.drawable.cc,"en"," 22.709505	" , " 89.070107"),
+                new CCData("Patuakhali", " Patuakhali"," House No-45 (1st Floor), A.K.M College Road, Chor Para, Patuakhali", true, R.drawable.cc,"en"," 22.363829" , " 90.344878")
+
 
 
         };
@@ -98,7 +109,19 @@ public class CCDataSet {
                 new CCData("নাটোর", " Natore"," নিলয় (২য় তলা),৪৬০ পৌজদারী পাড়া, নীচা বাজার, নাটোর।", true, R.drawable.cc,"bn"," 24.413111" , " 88.983944 "),
                 new CCData("নেত্রকোনা", " Netrokona"," হিল্লল মার্কেট (৩য় তলা), টেরি বাজার, নেত্রকোনা।", true, R.drawable.cc,"bn"," 24.884948" , " 90.732951 "),
                 new CCData("নিলফামারী", " Nilphamari"," জিলা পরিষদ মাকেট (দোকান # ২২৭ & ২২৮), ২য় তলা, চৌরঙ্গী মোড়, নিলফামারী।", true, R.drawable.cc,"en"," 25.927979" , " 88.856049 "),
-                new CCData("পাবনা", " Pabna"," আফাজ মাকেট (২য় তলা), বাড়ী# ১২২৪, পাঁচ মাথা মোড়, আতাইকুলা রোড, দিলালপুর, পাবনা।", true, R.drawable.cc,"en"," 24.007113" , " 89.239255 ")
+                new CCData("পাবনা", " Pabna"," আফাজ মাকেট (২য় তলা), বাড়ী# ১২২৪, পাঁচ মাথা মোড়, আতাইকুলা রোড, দিলালপুর, পাবনা।", true, R.drawable.cc,"en"," 24.007113" , " 89.239255 "),
+                new CCData("রাজশাহী", " Rajshahi"," সান ভ্যালী(৩য় তলা), বারি#৬৮, খান সামার চক, বরেন্দ্র কলেজ রোড, ঘোড়ামাড়া, বোয়ালিয়া, রাজশাহী।", true, R.drawable.cc,"bn"," 24.364900" , " 88.603254 "),
+                new CCData("রংপুর", " Rangpur"," Hatil হাতিল টাওয়ার (২য় তলা), বারি#৩, রোড- ২, ধাপ জেল রোড, কোতওয়ালি, রংপুর।", true, R.drawable.cc,"bn"," 25.761077" , " 89.235719 "),
+                new CCData("সিরাজগঞ্জ", " Sirajgonj"," সিদ্দিক প্লাজা(৩য় তলা),১২১,এসএস রোড, সিরাজগঞ্জ। ", true, R.drawable.cc,"bn"," 24.457175" , " 89.705939 "),
+                new CCData("সিলেট", " Sylhet "," আর এন টাওয়ার, (নীচ তলা), চৌহাট্টা পয়েন্ট, সিলেট। ", true, R.drawable.cc,"bn"," 24.898885 " , " 91.870886 "),
+                new CCData("টাঙ্গাইল", " Tangail"," শীলা কমপ্লেক্স (৩য় তলা), ভিক্টোরিয়া রোড, টাঙ্গাইল। ", true, R.drawable.cc,"bn"," 24.250973 " , " 89.916559 "),
+                new CCData("মাদারীপুর", " Madaripur"," এ.এম. টাওয়ার (৩য় তলা), পানিছত্র, শরিয়তপুর রোড, মাদারীপুর।", true, R.drawable.cc,"bn"," 23.168648" , " 90.215092"),
+                new CCData("নোয়াখালী", " Noahkali"," কিরন শপিং কমপ্লেক্স (৩য় তলা), করিমপুর রোড, চৌমুহনী, নোয়াখালী।", true, R.drawable.cc,"bn"," 22.945543" , " 91.118535"),
+                new CCData("কক্সবাজার", " Cox's Bazar"," চৌধুরী শপিং কমপ্লেক্স(২য় তলা), টেকপারা, মেইন রোড, বার্মিজ মার্কেট, কক্সবাজার।", true, R.drawable.cc,"bn"," 21.442257" , " 91.982542"),
+                new CCData("সাতক্ষীরা", " Satkhira"," তুফান কমপ্লেক্স (৩য় তলা), আবুল কাসেম সড়ক, সাতক্ষীরা।", true, R.drawable.cc,"bn"," 22.709505	" , " 89.070107"),
+                new CCData("পাটুয়াখালী", " Patuakhali"," বারি#-৪৫ (২য় তলা), এ.কে.এম কলেজ রোড, চর পাড়া, পটুয়াখালী।", true, R.drawable.cc,"bn"," 22.363829" , " 90.344878")
+
+
 
 
         };

@@ -8,8 +8,9 @@
     <color name="colorAccent">#FF80AB</color>
     <color name="colorHomeCardText">#000003</color>
     <color name="colorHomeCardBackground">#757575</color>
-    <color name ="colorViewLine">#1e88e5</color>
-    <color name="colorFeatureCard">#6d4c41</color>
+    <color name ="colorViewLine">#f50057</color>
+    <color name="colorFeatureCard">#000000</color>
+    <color name="selected_gray">#ffdbdbdb</color>
 </resources>
 
 <!--<resources>
@@ -21,6 +22,7 @@
 <color name="colorAccent">#26a69a</color>
 <color name="colorHomeCardText">#000003</color>
 <color name="colorHomeCardBackground">#757575</color>
-<color name ="colorViewLine">#ff7043</color>
-<color name="colorFeatureCard">#6d4c41</color>
+<color name ="colorViewLine">#1e88e5</color>
+<color name="colorFeatureCard">#000000</color>
+<color name="selected_gray">#ffdbdbdb</color>
 </resources> -->

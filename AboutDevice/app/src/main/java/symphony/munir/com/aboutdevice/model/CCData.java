@@ -1,9 +1,11 @@
 package symphony.munir.com.aboutdevice.model;
 
+import java.util.Comparator;
+
 /**
  * Created by munirul.hoque on 4/8/2015.
  */
-public class CCData {
+public class CCData implements Comparable<CCData> {
     private String ccName;
     private String ccText;
     private String ccAddress;
@@ -92,4 +94,17 @@ public class CCData {
         return lang;
     }
 
+    @Override
+    public int compareTo(CCData ccData) {
+        return 0;
+    }
+    public static Comparator<CCData>ccDataComparator = new Comparator<CCData>()
+    {
+        public int compare(CCData ccData1 , CCData ccData2)
+        {
+            String cc1 = ccData1.getCcText().trim();
+            String cc2 = ccData2.getCcText().trim();
+            return cc1.compareTo(cc2);
+        }
+    };
 }

@@ -3,30 +3,28 @@ package symphony.munir.com.aboutdevice.activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GooglePlayServicesUtil;
 import com.yqritc.recyclerviewflexibledivider.HorizontalDividerItemDecoration;
 
+import java.util.Arrays;
 import java.util.Locale;
 
-import symphony.munir.com.aboutdevice.MainActivity;
 import symphony.munir.com.aboutdevice.R;
 import symphony.munir.com.aboutdevice.adapter.CCDataAdapter;
 import symphony.munir.com.aboutdevice.model.CCData;
 import symphony.munir.com.aboutdevice.model.CCDataSet;
-import symphony.munir.com.aboutdevice.utils.DividerItemDecoration;
+import symphony.munir.com.aboutdevice.utils.ConnectionDetector;
 import symphony.munir.com.aboutdevice.utils.RecyclerItemClickListener;
 
 /**
@@ -90,6 +88,7 @@ public class ContactsFragment extends Fragment {
     {
 
 
+
         String temp = ccDataSet.getCCLang();
         if(temp.equals("en"))
         {
@@ -97,6 +96,7 @@ public class ContactsFragment extends Fragment {
 
             ccdata = new CCData[ccdata.length];
             ccdata = ccDataSet.getBanglaData();
+            Arrays.sort(ccdata, CCData.ccDataComparator);
             mAdapter = new CCDataAdapter(ccdata);
             recycleViewer.setAdapter(mAdapter);
             imageButton.setImageResource(R.drawable.toggle_english);
@@ -107,6 +107,7 @@ public class ContactsFragment extends Fragment {
 
             ccdata = new CCData[ccdata.length];
             ccdata = ccDataSet.getEnglishData();
+            Arrays.sort(ccdata, CCData.ccDataComparator);
             mAdapter = new CCDataAdapter(ccdata);
             recycleViewer.setAdapter(mAdapter);
             imageButton.setImageResource(R.drawable.toggle_bangla);
@@ -119,7 +120,9 @@ public class ContactsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
-        mAdapter = new CCDataAdapter(ccdata);
+        Arrays.sort(ccdata, CCData.ccDataComparator);
+        mAdapter = new CCDataAdapter( ccdata);
+
         recycleViewer.setAdapter(mAdapter);
 
         recycleViewer.setHasFixedSize(true);
@@ -139,14 +142,42 @@ public class ContactsFragment extends Fragment {
                 new RecyclerItemClickListener(getActivity(),new RecyclerItemClickListener.OnItemClickListener(){
                     @Override
                     public void onItemClick(View view, int position) {
-                        Intent intent = new Intent(getActivity(),MapActivity.class);
-                        intent.putExtra(EXTRA_LAT , ccdata[position].getLatitude());
-                        intent.putExtra(EXTRA_LANG , ccdata[position].getLongitude());
-                        intent.putExtra(EXTRA_ADDRESS , ccdata[position].getCcAddress());
-                        startActivity(intent);
-                        //Toast.makeText(view.getContext(),"item :  " + ccdata[position].getCcAddress(), Toast.LENGTH_SHORT).show();
-                    }
-                })
-        );
+                      // ((CCDataAdapter)recycleViewer.getAdapter())
+                        Intent intent;
+
+                        ConnectionDetector cd = new ConnectionDetector(getActivity().getApplicationContext());
+
+                        Boolean isInternetPresent = cd.isConnectingToInternet();
+                        if(isInternetPresent) {
+                                int resultCode = GooglePlayServicesUtil
+                                        .isGooglePlayServicesAvailable(getActivity());
+                                // ---if Google Play services is available---
+                                if (ConnectionResult.SUCCESS == resultCode) {
+                                    intent = new Intent(getActivity(), MapActivity.class);
+                                    // Toast.makeText(getActivity(),"Location Updates Google Play services is available.",Toast.LENGTH_LONG).show();
+                                } else {
+                                    //---Google Play services was not available for
+                                    // some reason---
+                                    intent = new Intent(getActivity(), AirMapActivity.class);
+                                    // intent = new Intent(getActivity(),MapActivity.class);
+                                    // Toast.makeText(getActivity(), "Location Updates Google Play services is NOT available.", Toast.LENGTH_LONG).show();
+                                }
+
+                                String activityName = getActivity().getClass().getSimpleName();
+                                intent.putExtra(EXTRA_LAT, ccdata[position].getLatitude());
+                                intent.putExtra(EXTRA_LANG, ccdata[position].getLongitude());
+                                intent.putExtra(EXTRA_ADDRESS, ccdata[position].getCcAddress());
+                                intent.putExtra("Activity",activityName);
+                                startActivity(intent);
+                                //Toast.makeText(view.getContext(),"item :  " + ccdata[position].getCcAddress(), Toast.LENGTH_SHORT).show();
+                            }
+                         else {
+
+                               Toast.makeText(getActivity().getApplicationContext(),"Please check your internet connection",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                    })
+            );
+
     }
 }

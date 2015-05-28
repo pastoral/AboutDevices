@@ -1,10 +1,13 @@
 package symphony.munir.com.aboutdevice.utils;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
+
+import symphony.munir.com.aboutdevice.R;
 
 /**
  * Created by munirul.hoque on 4/23/2015.
@@ -33,6 +36,7 @@ public class RecyclerItemClickListener implements RecyclerView.OnItemTouchListen
     @Override
     public boolean onInterceptTouchEvent(RecyclerView view, MotionEvent e) {
         View childView = view.findChildViewUnder(e.getX(), e.getY());
+
         if (childView != null && mListener != null && mGestureDetector.onTouchEvent(e)) {
             mListener.onItemClick(childView, view.getChildPosition(childView));
             return true;
